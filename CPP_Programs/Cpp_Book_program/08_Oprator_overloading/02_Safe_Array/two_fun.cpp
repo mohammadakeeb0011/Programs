@@ -14,7 +14,7 @@ class SafeArray
                 {cout<<"\nIndex out of bounds"; exit(1);}
             arr[n]=el;
         }
-        int getel(int n)                                               // Function for output
+        int getel(int n)                                                // Function for output
         {
             if(0 > n || n >= lim)
                 {cout<<"\nIndex out of bounds"; exit(1);}

@@ -8,16 +8,10 @@ class SafeArray
     private:
         int arr[lim];
     public:
-        void putel(int n,int el)                                        // Function for input
+        int& access(int n)
         {
-            if(0 > n || n >= lim)                                       // checking bounds
-                {cout<<"\nIndex out of bounds"; exit(1);}
-            arr[n]=el;
-        }
-        int getel(int n)                                               // Function for output
-        {
-            if(0 > n || n >= lim)
-                {cout<<"\nIndex out of bounds"; exit(1);}
+            if(n<0 || n>lim)
+            {cout<<"\nIndex out of bounds"; exit(1);}
             return arr[n];
         }
 
@@ -25,18 +19,18 @@ class SafeArray
 
 int main()
 {
-    SafeArray arr;
-    int i,m,p;
+    SafeArray arr1;
+    int i,m;
     cout<<"Enter the no. of elements:";
     cin>>m;
     for(i = 0 ; i < m; i++ )
     {
-        cin>>p;
-        arr.putel(i, p);
+        arr1.access(i) = i*10;
     }
     for(i = 0 ; i < m; i++ )
     {
-        cout<<"Element no "<<i<<" is : "<< arr.getel(i)<<endl;
+        int temp = arr1.access(i);
+        cout<<"Element no "<<i<<" is : "<< temp <<endl; 
     }
 
     return 0;
