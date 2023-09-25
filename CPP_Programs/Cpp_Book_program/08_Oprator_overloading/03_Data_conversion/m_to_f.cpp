@@ -26,7 +26,7 @@ class Distance{
         {
             cout<<feet<<"\'"<<inches<<'\"';
         }
-        operator float() 
+        operator float() const                                     // conversion of type float
         {
             float fltfeet = inches/12;
             fltfeet += static_cast<float>(feet);
