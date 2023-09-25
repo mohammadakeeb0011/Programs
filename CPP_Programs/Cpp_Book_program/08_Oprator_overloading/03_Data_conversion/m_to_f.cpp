@@ -36,6 +36,16 @@ class Distance{
 
 int main()
 {
+    float mtrs;
+    Distance d1 = 2.35F;
+    cout<< "\nd1 ="; d1.showdis();
+
+    mtrs = static_cast<float>(d1);
+    cout<<"\nd1 ="<<mtrs<<" meters\n";
+
+    Distance d2(5, 10.25);
     
+    mtrs = d2;
+    cout<<"\nd2 ="<<mtrs<<" meters\n";
     return 0;
 }
