@@ -1,0 +1,5 @@
+Validates if a filename has been entered, if not display error message and exit the program.
+Open the file for read only, using fopen function, and store the return value to a file pointer variable.
+If file opened successfully then continue next steps, otherwise display error message and exit.
+Using fgetc function, read the characters from the file one by one until End Of File.
+Print the character that is read to standard output, which is the display screen.
