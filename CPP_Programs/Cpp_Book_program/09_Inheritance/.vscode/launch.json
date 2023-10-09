@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/VsCode/Programs/CPP_Programs/Cpp_Book_program/06_OOP",
-      "program": "d:/VsCode/Programs/CPP_Programs/Cpp_Book_program/06_OOP/build/Debug/outDebug",
+      "cwd": "d:/VsCode/Programs/CPP_Programs/Cpp_Book_program/09_Inheritance",
+      "program": "d:/VsCode/Programs/CPP_Programs/Cpp_Book_program/09_Inheritance/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
