@@ -1,114 +1,132 @@
-#include "Distance.h"
+// #include "Distance.h"
 
-Distance::Distance(int feet_val,float inches_val): feet(feet_val), inches(inches_val)
-{ }
-Distance Distance::operator + (Distance dd)const
-{
-    int f = feet + dd.feet;
-    float in = inches + dd.inches;
-    if(in >= 12)
-    {
-        in -=12;
-        f++;
-    }
-    return Distance(f,in);
-}
+// Distance::Distance(int feet_val,float inches_val): feet(feet_val), inches(inches_val)
+// { }
+// Distance Distance::operator + (Distance dd)const
+// {
+//     int f = feet + dd.feet;
+//     float in = inches + dd.inches;
+//     if(in >= 12)
+//     {
+//         in -=12;
+//         f++;
+//     }
+//     return Distance(f,in);
+// }
 
-Distance Distance::operator += (Distance dd)
-{
-    feet += dd.feet;
-    inches += dd.inches;
-    if(inches >= 12)
-    {
-        inches -=12;
-        feet++;
-    }
-    return Distance(feet,inches);
-}
-
-
-Distance Distance::operator -= (Distance dd)
-{
-    feet -= dd.feet;
-    inches -= dd.inches;
-    if(inches < 0)
-    {
-        inches +=12;
-        feet--;
-    }
-    return Distance(feet,inches);
-}
-
-Distance Distance::operator - (Distance dd)const
-{
-    int f = feet - dd.feet;
-    float in = inches - dd.inches;
-    if(in < 0)
-    {
-        in +=12;
-        f--;
-    }
-    return Distance(f,in);
-}
+// Distance Distance::operator += (Distance dd)
+// {
+//     feet += dd.feet;
+//     inches += dd.inches;
+//     if(inches >= 12)
+//     {
+//         inches -=12;
+//         feet++;
+//     }
+//     return Distance(feet,inches);
+// }
 
 
-bool Distance::operator < (Distance dd)const
-{
-    float d1 = feet + (inches/12);
-    float d2 = dd.feet + (dd.inches/12);
-    return (d1 < d2)? true : false;
-}
+// Distance Distance::operator -= (Distance dd)
+// {
+//     feet -= dd.feet;
+//     inches -= dd.inches;
+//     if(inches < 0)
+//     {
+//         inches +=12;
+//         feet--;
+//     }
+//     return Distance(feet,inches);
+// }
 
-bool Distance::operator > (Distance dd)const
-{
-    float d1 = feet + (inches/12);
-    float d2 = dd.feet + (dd.inches/12);
-    return (d1 > d2)? true : false;
-}
+// Distance Distance::operator - (Distance dd)const
+// {
+//     int f = feet - dd.feet;
+//     float in = inches - dd.inches;
+//     if(in < 0)
+//     {
+//         in +=12;
+//         f--;
+//     }
+//     return Distance(f,in);
+// }
 
-bool Distance::operator <= (Distance dd)const
-{
-    float d1 = feet + (inches/12);
-    float d2 = dd.feet + (dd.inches/12);
-    return (d1 <= d2)? true : false;
-}
 
-bool Distance::operator >= (Distance dd)const
-{
-    float d1 = feet + (inches/12);
-    float d2 = dd.feet + (dd.inches/12);
-    return (d1 >= d2)? true : false;
-}
-Distance Distance::operator ++ ()
-{
-    feet += 1;
-    return Distance(feet,inches);
-}
-Distance Distance::operator -- ()
-{
-    feet -= 1;
-    return Distance(feet,inches);
-}
+// bool Distance::operator < (Distance dd)const
+// {
+//     float d1 = feet + (inches/12);
+//     float d2 = dd.feet + (dd.inches/12);
+//     return (d1 < d2)? true : false;
+// }
 
-Distance Distance::operator ++ (int)
-{
-    feet += 1;
-    return Distance(feet);                              // returns only feet  and initilise inches to 0.0
-}
-Distance Distance::operator -- (int)
-{
-    feet -= 1;
-    return Distance(feet);                              // returns only feet  and initilise inches to 0.0
-}
+// bool Distance::operator > (Distance dd)const
+// {
+//     float d1 = feet + (inches/12);
+//     float d2 = dd.feet + (dd.inches/12);
+//     return (d1 > d2)? true : false;
+// }
 
-void Distance::display()
-{
-    cout<<feet<<"\'"<<inches<<'\"'<<endl;
+// bool Distance::operator <= (Distance dd)const
+// {
+//     float d1 = feet + (inches/12);
+//     float d2 = dd.feet + (dd.inches/12);
+//     return (d1 <= d2)? true : false;
+// }
+
+// bool Distance::operator >= (Distance dd)const
+// {
+//     float d1 = feet + (inches/12);
+//     float d2 = dd.feet + (dd.inches/12);
+//     return (d1 >= d2)? true : false;
+// }
+// Distance Distance::operator ++ ()
+// {
+//     feet += 1;
+//     return Distance(feet,inches);
+// }
+// Distance Distance::operator -- ()
+// {
+//     feet -= 1;
+//     return Distance(feet,inches);
+// }
+
+// Distance Distance::operator ++ (int)
+// {
+//     feet += 1;
+//     return Distance(feet);                              // returns only feet  and initilise inches to 0.0
+// }
+// Distance Distance::operator -- (int)
+// {
+//     feet -= 1;
+//     return Distance(feet);                              // returns only feet  and initilise inches to 0.0
+// }
+
+// void Distance::display()
+// {
+//     cout<<feet<<"\'"<<inches<<'\"'<<endl;
+// }
+// void Distance::get()
+// {
+//     cout<<"Enter feet:";
+//     cin>>feet;
+//     cout<<"Enter inches:";
+//     cin>>inches;
+// }
+#include<iostream>
+using namespace std;
+class A{
+    int num;
+    int num2;
+    public:
+    
+    friend int Double(A);
 }
-void Distance::get()
+int Double(A a1)
 {
-    cout<<"Enter feet:";
-    cin>>feet;
-    cout<<"Enter inches:";
-    cin>>inches;
+    return a1.num+a1.num2;
+}
+int main()
+{
+    A a(5,12);
+    cout<<Double(a);
 }
